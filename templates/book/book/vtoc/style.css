@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+@page :left {
+    margin: 12mm 18mm 12mm 12mm;
+}
+@page :right {
+    margin: 12mm 12mm 12mm 18mm;
+}
+@page {
+    counter-increment: page;
+}
+body {
+    margin: 0;
+    -epub-writing-mode: vertical-rl;
+    -cssj-direction-mode: vertical-rl;
+    text-align: justify;
+    font-family: serif;
+    widows: 1;
+    orphans: 1;    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    page-break-inside: avoid;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+p {
+    margin: 0;
+    text-indent: 1em;
+}
+
+#left-nombre,
+#right-nombre {
+    display: block;
+    -epub-writing-mode: vertical-rl;
+    -cssj-direction-mode: vertical-rl;
+    bottom: -4mm;
+    width: 8mm;
+    font-size: 2.5mm;
+    line-height: 3.2; /* 8mm */
+    white-space: nowrap;
+    text-align: right;
+}
+#left-nombre {
+    -cssj-page-content: nombre-left left;
+    left: -9mm;
+}
+#right-nombre {
+    -cssj-page-content: nombre-right right;
+    right: -9mm;
+}
+#left-nombre .heading,
+#right-nombre .heading {
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 1.5em;
+}
+#left-nombre .heading:before,
+#right-nombre .heading:before {
+    content: -cssj-heading(1);
+}
+#left-nombre .page,
+#right-nombre .page{
+    display: inline-block;
+    -epub-writing-mode: horizontal-tb;
+    -cssj-direction-mode: horizontal-tb;
+    width: 8mm;
+    font-size: 3mm;
+    line-height: 1;
+    text-align: center;
+}
+#left-nombre .page:before,
+#right-nombre .page:before {
+    content: counter(page);
+}
+
+div.section {
+    margin-top: 4em;
+    font-size: 14pt;
+    font-family: sans-serif;
+    line-height: 1.2;
+}
+div.section div.label {
+    margin-top: -2em;
+    margin-right: 1em;
+    margin-left: 0.8em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    position: relative;
+}
+div.section div.label:after {
+    content: ' ';
+    display: Block;
+    border-left: 0.3mm solid Black;
+    position: relative;
+    left: .65em;
+    margin-bottom: 1em;
+}
+div.section div.label span.text {
+    position: relative;
+    background-color: White;
+    z-index: 1;
+    padding-bottom: 1em;
+}
+
+div.section div.item {
+    clear: both;
+    page-break-inside: avoid;
+    font-size: 10pt;
+    font-family: serif;
+    line-height: 1.8;
+}
+
+div.section a:after {
+    -epub-writing-mode: horizontal-tb;
+    -cssj-direction-mode: horizontal-tb;
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+	background-color: White;
+    font-size: 9pt;
+    font-family: serif;
+    content: -cssj-page-ref(attr(href), page);
+    width: 14pt;
+    text-align: center;
+}
+div.section div.item a {
+    margin-top: 1em;
+}
+div.section div.item a:after {
+	position: static;
+}
+
+div.section a,
+div.section a:link {
+    color: Black;
+    text-decoration: none;
+}

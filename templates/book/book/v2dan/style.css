@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+@page :left {
+    margin: 12mm 18mm 12mm 12mm;
+}
+@page :right {
+    margin: 12mm 12mm 12mm 18mm;
+}
+@page {
+    counter-increment: page;
+}
+/*
+  印刷面幅:97mm
+ 行数:20
+ 行ピッチ:4.85mm / 文字 2.998mm
+*/
+body {
+    margin: 0;
+    -epub-writing-mode: vertical-rl;
+    -cssj-direction-mode: vertical-rl;
+    column-count: 2;
+    column-gap: 1.5em;
+    column-fill: auto;
+    font-family: serif;
+    font-size: 2.998mm;
+    line-height: 1.618;
+    text-align: justify;
+    widows: 1;
+    orphans: 1;    
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    page-break-inside: avoid;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+p {
+    margin: 0;
+    text-indent: 1em;
+}
+blockquote {
+    margin: 0 2.325mm;
+    border: .2mm Black solid;
+    padding: 2.325mm;
+}
+.wp-caption {
+    -epub-writing-mode: horizontal-tb;
+    -cssj-direction-mode: horizontal-tb;
+    margin: 2.425mm 0;
+    font-family: sans-serif;
+    font-size: 2mm;
+    line-height: 1.2125; /* 2.425mm */
+}
+.wp-caption img {
+    border: none;
+}
+.aligncenter {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.alignright {
+	margin-top: 2.425mm;
+	float: right;
+}
+.alignleft {
+	margin-bottom: 2.425mm;
+	float: left;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#left-nombre,
+#right-nombre {
+    display: block;
+    -epub-writing-mode: vertical-rl;
+    -cssj-direction-mode: vertical-rl;
+bottom: -4mm;
+    width: 8mm;
+    font-size: 2.5mm;
+    line-height: 3.2; /* 8mm */
+    white-space: nowrap;
+    text-align: right;
+}
+#left-nombre {
+    -cssj-page-content: nombre-left left;
+    left: -9mm;
+}
+#right-nombre {
+    -cssj-page-content: nombre-right right;
+    right: -9mm;
+}
+#left-nombre .heading,
+#right-nombre .heading,
+#left-nombre .no-heading,
+#right-nombre .no-heading {
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 2em;
+}
+#left-nombre .heading:before,
+#right-nombre .heading:before {
+    content: -cssj-heading(1);
+}
+#left-nombre .page,
+#right-nombre .page{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -epub-writing-mode: horizontal-tb;
+    -cssj-direction-mode: horizontal-tb;
+    width: 8mm;
+    font-size: 3mm;
+    line-height: 1;
+    text-align: center;
+}
+#left-nombre .page:before,
+#right-nombre .page:before {
+    content: counter(page);
+}
+
+h1 {
+    margin: 0 0 0 4.85mm;
+    column-span: all;
+    font-size: 9.7mm;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 4mm;
+    line-height: 1.2125; /* 4.85mm */
+    margin: 0 4.85mm;
+}
+
+ol li {
+	list-style-type:-cssj-full-width-decimal;
+}

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+@page {
+	margin: 35mm 20mm 27mm 30mm;
+    counter-increment: page;
+}
+body {
+    margin: 0;
+	font: normal 12pt/2 serif;
+	text-align: justify;
+	widows: 1;
+	orphans: 1;
+}
+p {
+    margin: 0;
+    text-indent: 1em;
+}
+.wp-caption {
+    margin: 2.5mm 0;
+    font-family: sans-serif;
+    font-size: 2mm;
+    line-height: 1.618;
+}
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+.alignright {
+	margin-left: 2.5mm;
+	float: right;
+}
+.alignleft {
+	margin-right: 2.5mm;
+	float: left;
+}
+.wp-caption img {
+    border: none;
+}
+
+#nombre {
+    -cssj-page-content: nombre;
+	display: block;
+	left: 0;
+    bottom: -10mm;
+    width: 100%;
+    font: normal 12pt/1 serif;
+    text-align: center;
+}
+#nombre .page:before {
+    content: '- ' counter(page) ' -';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    page-break-inside: avoid;
+    font: normal 12pt/2 serif;
+}
+
+h1 {
+	width: 12em;
+	text-align: justify;
+	-epub-text-align-last: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h2:before {
+	counter-increment: section;
+	content: '第' counter(section);
+	content: '第' counter(section, -cssj-decimal-full-width);
+	margin-right: 1em;
+}
+
+h3:before {
+	counter-increment: subsection;
+	content: counter(subsection);
+	content: counter(subsection, -cssj-decimal-full-width);
+	margin-right: 1em;
+}
+

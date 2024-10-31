@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@page {
+    margin: 0;
+}
+body {
+    margin: -3mm;
+    -epub-writing-mode: horizontal-tb ! important;
+    -epub-column-count: 1 ! important;
+}
+img {
+    position: absolute;
+    left: -3mm;
+    top: -3mm;
+    width: 133mm;
+    height: 194mm;
+}

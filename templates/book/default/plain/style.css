@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@page :left {
+    margin: 8mm 16mm 8mm 12mm;
+}
+@page :right {
+    margin: 8mm 12mm 8mm 16mm;
+}
+@page {
+    counter-increment: page;
+}
+body {
+    margin: 0;
+}

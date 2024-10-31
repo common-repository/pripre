@@ -1,0 +1,45 @@
+@charset 'UTF-8';
+
+span._em {
+	-epub-text-emphasis: sesame;
+}
+
+span._tcy {
+	-epub-text-combine: horizontal;
+    line-height: 1;
+    text-indent: 0;
+}
+
+span._hidden {
+	display: none;
+}
+
+p._noindent {
+    text-indent: 0 ! important;
+}
+
+img._cover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+._pagebreak {
+    clear: all;
+    display: block;
+    page-break-after: always;
+}
+._columnbreak {
+    clear: all;
+    display: block;
+    page-break-after: column;
+}
+
+._columnspan_all {
+	-cssj-column-span: all;
+}
+
+.wp-caption {
+    page-break-inside: avoid;
+}

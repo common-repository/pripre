@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+@page :left {
+    margin: 12mm 14mm 12mm 12mm;
+}
+@page :right {
+    margin: 12mm 12mm 12mm 14mm;
+}
+@page {
+    counter-increment: page;
+}
+/*
+ 印刷面高さ:164mm
+ 行数:33
+ 行ピッチ:4.97mm / 文字 3.515mm
+*/
+body {
+    margin: 0;
+    -epub-writing-mode: horizontal-tb;
+    -cssj-direction-mode: horizontal-tb;
+    font-family: serif;
+    font-size: 3.515mm;
+    line-height: 1.414;
+    text-align: justify;
+    widows: 1;
+    orphans: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    page-break-inside: avoid;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+p {
+    margin: 0;
+    text-indent: 1em;
+}
+blockquote {
+    margin: 2.385mm 0;
+    border: .2mm Black solid;
+    padding: 2.385mm;
+}
+.wp-caption {
+    margin: 2.485mm 0;
+    font-family: sans-serif;
+    font-size: 3.07mm;
+    line-height: 1.618;
+}
+.wp-caption img {
+    border: none;
+}
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+.alignright {
+	margin-left: 2.485mm;
+	float: right;
+}
+.alignleft {
+	margin-right: 2.485mm;
+	float: left;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#left-nombre,
+#right-nombre {
+    display: block;
+    bottom: -6mm;
+    font-size: 2.5mm;
+    line-height: 1;
+}
+#left-nombre {
+    -cssj-page-content: nombre-left left;
+    left: -7mm;
+}
+#right-nombre {
+    -cssj-page-content: nombre-right right;
+    right: -7mm;
+}
+#left-nombre .heading:before,
+#right-nombre .heading:before {
+    content: -cssj-heading(1);
+}
+#left-nombre .page,
+#right-nombre .page {
+	display: inline-block;
+    width: 8mm;
+    font-size: 3mm;
+    text-align: center;
+}
+#left-nombre .page:before,
+#right-nombre .page:before {
+    content: counter(page);
+}
+
+h1 {
+    margin: 4.97mm 0 9.94mm 0;
+    font-size: 10mm;
+    line-height: 1.491; /* 14.91mm */;
+}
+h2 {
+    font-size: 4mm;
+    line-height: 1.2425; /* 4.97mm */
+    margin: 4.97mm 0;
+}

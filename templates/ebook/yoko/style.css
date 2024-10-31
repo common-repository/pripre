@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+
+body {
+    text-align: justify;
+    line-height: 1.414;
+    -epub-writing-mode: horizontal-tb;
+    -cssj-direction-mode: horizontal-tb;
+}
+
+.wp-caption {
+    margin: 2.5mm 0;
+    font-family: sans-serif;
+}
+
+* {
+	max-width: 100%;
+	max-height: 100%;
+}
